@@ -1,4 +1,3 @@
-````markdown
 # Curso Completo de Vagrant
 
 ## Seção 1: Introdução ao Vagrant
@@ -30,10 +29,10 @@ Vagrant é uma ferramenta para construir e gerenciar ambientes de desenvolviment
 ### Configuração Inicial
 
 1. Verifique se o Vagrant está instalado corretamente:
+
    ```bash
    vagrant --version
    ```
-````
 
 2. Verifique se o VirtualBox está instalado corretamente:
 
@@ -270,5 +269,4 @@ git push origin master
 
 ```
 
-Agora você tem um curso completo de Vagrant em um único arquivo `README.md`, pronto para ser subido no seu GitHub. Se precisar de mais alguma coisa, sinta-se à vontade para perguntar!
 ```
