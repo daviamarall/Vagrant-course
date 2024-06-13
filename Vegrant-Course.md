@@ -242,31 +242,3 @@ curso-vagrant/
 │
 └── Vagrantfile
 ```
-
-## Subindo o Projeto no GitHub
-
-1. Crie um repositório no GitHub.
-2. Clone o repositório no seu computador.
-3. Adicione os arquivos do curso ao repositório.
-4. Faça commit e push das mudanças.
-
-### Comandos Git
-
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/curso-vagrant.git
-cd curso-vagrant
-
-# Adicione os arquivos do curso
-git add .
-
-# Faça commit das mudanças
-git commit -m "Adiciona curso completo de Vagrant"
-
-# Envie as mudanças para o GitHub
-git push origin master
-```
-
-```
-
-```
