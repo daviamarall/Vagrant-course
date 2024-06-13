@@ -1,21 +1,5 @@
-### Curso de Vagrant
-
-1. **Introdução ao Vagrant**
-2. **Instalação e Configuração**
-3. **Criando e Gerenciando Máquinas Virtuais**
-4. **Provisionamento com Vagrant**
-5. **Sincronização de Diretórios**
-6. **Redes e Configurações**
-7. **Projeto Final: Site Simples com Apache**
-
----
-
-### 1. Introdução ao Vagrant
-
-#### Arquivo: `README.md`
-
-```markdown
-# Curso de Vagrant
+````markdown
+# Curso Completo de Vagrant
 
 ## Seção 1: Introdução ao Vagrant
 
@@ -35,16 +19,8 @@ Vagrant é uma ferramenta para construir e gerenciar ambientes de desenvolviment
 - Desenvolvimento de software.
 - Testes e integração contínua.
 - Simulação de ambientes de produção.
-```
 
----
-
-### 2. Instalação e Configuração
-
-#### Arquivo: `README.md`
-
-````markdown
-# Seção 2: Instalação e Configuração
+## Seção 2: Instalação e Configuração
 
 ### Instalando o Vagrant
 
@@ -77,24 +53,17 @@ Vagrant é uma ferramenta para construir e gerenciar ambientes de desenvolviment
    vagrant init
    ```
 
-````
-
----
-
-### 3. Criando e Gerenciando Máquinas Virtuais
-
-#### Arquivo: `README.md`
-
-```markdown
-# Seção 3: Criando e Gerenciando Máquinas Virtuais
+## Seção 3: Criando e Gerenciando Máquinas Virtuais
 
 ### Criando uma Máquina Virtual
+
 1. Edite o arquivo `Vagrantfile` gerado na configuração inicial:
+
    ```ruby
    Vagrant.configure("2") do |config|
      config.vm.box = "ubuntu/bionic64"
    end
-````
+   ```
 
 2. Inicie a máquina virtual:
 
@@ -114,27 +83,21 @@ Vagrant é uma ferramenta para construir e gerenciar ambientes de desenvolviment
 - `vagrant halt`: Desliga a máquina virtual.
 - `vagrant destroy`: Destroi a máquina virtual.
 
-````
-
----
-
-### 4. Provisionamento com Vagrant
-
-#### Arquivo: `README.md`
-
-```markdown
-# Seção 4: Provisionamento com Vagrant
+## Seção 4: Provisionamento com Vagrant
 
 ### O que é Provisionamento?
+
 Provisionamento é o processo de configurar automaticamente a máquina virtual após sua criação. Vagrant suporta vários métodos de provisionamento, incluindo Shell, Ansible, Chef e Puppet.
 
 ### Provisionamento com Shell Script
+
 1. Crie um arquivo de script chamado `setup.sh`:
+
    ```bash
    #!/bin/bash
    sudo apt-get update
    sudo apt-get install -y apache2
-````
+   ```
 
 2. Edite o `Vagrantfile` para usar o script de provisionamento:
 
@@ -150,28 +113,22 @@ Provisionamento é o processo de configurar automaticamente a máquina virtual a
    vagrant up --provision
    ```
 
-````
-
----
-
-### 5. Sincronização de Diretórios
-
-#### Arquivo: `README.md`
-
-```markdown
-# Seção 5: Sincronização de Diretórios
+## Seção 5: Sincronização de Diretórios
 
 ### Sincronização de Diretórios
+
 Vagrant permite sincronizar diretórios entre o host e a máquina virtual. Isso facilita o desenvolvimento, pois alterações feitas no host são refletidas na máquina virtual.
 
 ### Configurando Sincronização
+
 1. Edite o `Vagrantfile` para adicionar sincronização de diretórios:
+
    ```ruby
    Vagrant.configure("2") do |config|
      config.vm.box = "ubuntu/bionic64"
      config.vm.synced_folder "./data", "/var/www/html"
    end
-````
+   ```
 
 2. Crie o diretório `data` no host:
 
@@ -198,28 +155,22 @@ Vagrant permite sincronizar diretórios entre o host e a máquina virtual. Isso 
    vagrant reload
    ```
 
-````
-
----
-
-### 6. Redes e Configurações
-
-#### Arquivo: `README.md`
-
-```markdown
-# Seção 6: Redes e Configurações
+## Seção 6: Redes e Configurações
 
 ### Configurando Redes
+
 Vagrant permite configurar redes para a máquina virtual, como redes privadas e públicas.
 
 ### Configurando uma Rede Privada
+
 1. Edite o `Vagrantfile` para adicionar uma rede privada:
+
    ```ruby
    Vagrant.configure("2") do |config|
      config.vm.box = "ubuntu/bionic64"
      config.vm.network "private_network", ip: "192.168.33.10"
    end
-````
+   ```
 
 2. Reinicie a máquina virtual para aplicar as mudanças:
 
@@ -230,22 +181,16 @@ Vagrant permite configurar redes para a máquina virtual, como redes privadas e 
 3. Acesse o site através do IP configurado:
    - Abra um navegador e vá para `http://192.168.33.10`
 
-````
-
----
-
-### 7. Projeto Final: Site Simples com Apache
-
-#### Arquivo: `README.md`
-
-```markdown
-# Seção 7: Projeto Final: Site Simples com Apache
+## Seção 7: Projeto Final: Site Simples com Apache
 
 ### Objetivo
+
 Configurar um site simples que será servido pelo Apache de forma automatizada.
 
 ### Passo a Passo
+
 1. Crie o arquivo `Vagrantfile`:
+
    ```ruby
    Vagrant.configure("2") do |config|
      config.vm.box = "ubuntu/bionic64"
@@ -253,7 +198,7 @@ Configurar um site simples que será servido pelo Apache de forma automatizada.
      config.vm.synced_folder "./data", "/var/www/html"
      config.vm.provision "shell", path: "setup.sh"
    end
-````
+   ```
 
 2. Crie o script de provisionamento `setup.sh`:
 
@@ -299,18 +244,14 @@ curso-vagrant/
 └── Vagrantfile
 ```
 
-````
-
----
-
-### Subindo o Projeto no GitHub
+## Subindo o Projeto no GitHub
 
 1. Crie um repositório no GitHub.
 2. Clone o repositório no seu computador.
 3. Adicione os arquivos do curso ao repositório.
 4. Faça commit e push das mudanças.
 
-#### Comandos Git
+### Comandos Git
 
 ```bash
 # Clone o repositório
@@ -325,6 +266,9 @@ git commit -m "Adiciona curso completo de Vagrant"
 
 # Envie as mudanças para o GitHub
 git push origin master
-````
+```
 
----
+```
+
+Agora você tem um curso completo de Vagrant em um único arquivo `README.md`, pronto para ser subido no seu GitHub. Se precisar de mais alguma coisa, sinta-se à vontade para perguntar!
+```
